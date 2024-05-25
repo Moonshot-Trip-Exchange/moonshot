@@ -1,27 +1,21 @@
 import React from 'react';
-import { TextField } from '@mui/material';
-import { DatePicker } from '@mui/lab';
+import { TextField, Button } from '@mui/material';
 
-const SellTicket = () => {
+export const SellTicket = () => {
   return (
     <div> 
       <h1>Sell Ticket</h1>
-      <form noValidate autoComplete="off">
+      <form noValidate autoComplete="off" style={{display: 'flex', justify: 'center', flexDirection: "column"}}>
+        
         <TextField id="serial-no" label="Serial No." variant="outlined" />
-          <DatePicker
-            disableToolbar
-            variant="inline"
-            format="MM/dd/yyyy"
-            margin="normal"
-            id="date-picker-inline"
-            label="Date"
-            KeyboardButtonProps={{
-              'aria-label': 'change date',
-            }}
-          />
+        <TextField id="date" label="Date" type="date" variant="outlined" />
+        <TextField id="to" label="To" variant="outlined" />
+        <TextField id="from" label="From" variant="outlined" />
+        <TextField id="price" label="Price" variant="outlined" />
+        <Button type="submit" variant="contained" color="primary">
+          Submit
+        </Button>
       </form>
     </div>
   );
 };
-
-export default SellTicket;
