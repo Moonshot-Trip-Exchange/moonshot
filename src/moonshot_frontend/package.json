@@ -1,10 +1,10 @@
 {
-  "name": "backend_frontend",
+  "name": "moonshot_frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "setup": "npm i && dfx canister create backend_backend && dfx generate backend_backend && dfx deploy",
+    "setup": "npm i && dfx canister create moonshot_backend && dfx generate moonshot_backend && dfx deploy",
     "start": "vite --port 3000",
     "prebuild": "dfx generate",
     "build": "tsc && vite build",

@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { backend_backend } from 'declarations/backend_backend';
+import { moonshot_backend } from 'declarations/moonshot_backend';
 
-function App() {
+const App = () => {
   const [greeting, setGreeting] = useState('');
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const name = event.target.elements.name.value;
-    backend_backend.greet(name).then((greeting) => {
+    moonshot_backend.greet(name).then((greeting) => {
       setGreeting(greeting);
     });
     return false;

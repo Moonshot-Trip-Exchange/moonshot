@@ -1,18 +1,18 @@
 {
   "canisters": {
-    "backend_backend": {
-      "main": "src/backend_backend/main.mo",
+    "moonshot_backend": {
+      "main": "src/moonshot_backend/main.mo",
       "type": "motoko"
     },
-    "backend_frontend": {
+    "moonshot_frontend": {
       "dependencies": [
-        "backend_backend"
+        "moonshot_backend"
       ],
       "source": [
-        "src/backend_frontend/dist"
+        "src/moonshot_frontend/dist"
       ],
       "type": "assets",
-      "workspace": "backend_frontend"
+      "workspace": "moonshot_frontend"
     }
   },
   "defaults": {
