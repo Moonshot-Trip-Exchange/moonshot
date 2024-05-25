@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -9,9 +9,14 @@ import Menu from '@mui/material/Menu';
 
 export const MSAppBar = () => {
   let auth = true;
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleMenu = (event) => {
-    console.log("clicked");
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
@@ -53,8 +58,8 @@ export const MSAppBar = () => {
                 vertical: "top",
                 horizontal: "right",
               }}
-              // open={Boolean(anchorEl)}
-              // onClose={handleClose}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
             >
               {/* <MenuItem onClick={handleClose}>Profile</MenuItem>
             <MenuItem onClick={handleClose}>My account</MenuItem> */}
