@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Marketplace } from './components/Marketplace/Marketplace';
 // import { moonshot_backend } from 'declarations/moonshot_backend';
 import React from 'react'
-import { MSAppBar } from './components/Marketplace/common/MSAppBar';
+import { MSAppBar } from './common/MSAppBar';
 
 
 const App = () => {
