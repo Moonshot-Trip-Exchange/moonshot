@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Menu from '@mui/material/Menu';
+import { Button } from "@mui/material";
 
 export const MSAppBar = () => {
   let auth = true;
@@ -34,9 +35,11 @@ export const MSAppBar = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Moonshot
         </Typography>
+        <Button variant="contained" sx={{background: '#3432a8'}}>Sell a ticket</Button>
         {auth && (
           <div>
-            <IconButton
+           
+            {/* <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -45,7 +48,7 @@ export const MSAppBar = () => {
               color="inherit"
             >
               <AccountCircle />
-            </IconButton>
+            </IconButton> */}
             <Menu
               id="menu-appbar"
               // anchorEl={anchorEl}
