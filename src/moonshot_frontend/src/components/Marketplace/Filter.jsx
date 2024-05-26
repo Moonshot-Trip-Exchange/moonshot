@@ -10,15 +10,29 @@ import { PopupContext } from '@mui/base/Unstable_Popup';
 import { Box } from "@mui/material";
 import { Typography } from "antd";
 
-
-export const FromFilter = () => {
+export const Filter = ({ value }) => {
   return (
   <Box sx={{marginTop:2}}>
-    <Typography variant="h5" >From</Typography>
-    <Select defaultValue={10} >
+    <Typography variant="h5">{value}</Typography>
+    <Select defaultValue={"Select a city"} >
       <Option value={10} >Toronto</Option>
       <Option value={20}>Vancouver</Option>
       <Option value={30}>New York</Option>
+      <Option value={40}>Los Angeles</Option>
+      <Option value={50}>San Francisco</Option>
+      <Option value={60}>Chicago</Option>
+      <Option value={70}>Miami</Option>
+      <Option value={80}>Boston</Option>
+      <Option value={90}>Seattle</Option>
+      <Option value={100}>Las Vegas</Option>
+      <Option value={110}>Montreal</Option>
+      <Option value={120}>Calgary</Option>
+      <Option value={130}>Ottawa</Option>
+      <Option value={140}>Quebec City</Option>
+      <Option value={150}>Edmonton</Option>
+      <Option value={160}>Winnipeg</Option>
+      <Option value={170}>Halifax</Option>
+      <Option value={180}>Victoria</Option>
     </Select>
     </Box>
   );

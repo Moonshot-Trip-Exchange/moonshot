@@ -3,11 +3,12 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Box, Button, CardActionArea } from "@mui/material";
-import image from "./assets/via.jpg";
+import { Box, CardActionArea } from "@mui/material";
+import train from "./assets/via.jpg";
+import bus from "./assets/bus.jpg";
 import { getDateString } from "./helpers";
 
-export const TicketCard = ({route = "Toronto to Vancouver", date = new Date(), price = "50"}) => {
+export const TicketCard = ({route, date, price}) => {
 
     return (
     <Card sx={{ maxWidth: 345, borderRadius: 5 }}>
@@ -34,7 +35,7 @@ export const TicketCard = ({route = "Toronto to Vancouver", date = new Date(), p
         <CardMedia
           component="img"
           height="140"
-          image={image}
+          image={price > 99 ? train : bus}
           alt="green iguana"
         />
 

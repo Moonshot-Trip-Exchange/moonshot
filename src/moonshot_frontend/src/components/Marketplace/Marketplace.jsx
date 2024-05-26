@@ -1,19 +1,17 @@
 import React from "react";
-import { TicketCard } from "./TicketCard";
 import { CardWrapper } from "./assets/CardWrapper";
 import { FilterWrapper } from "./FilterWrapper";
-import { Box } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 
 export const Marketplace = () => {
   return (
     <main>
-      <h1>Marketplace</h1>
+      <Typography sx={{ padding: "30px", fontSize: '1.6rem' }}>Explore</Typography>
       <Box display="flex">
         <FilterWrapper />
 
         <CardWrapper />
       </Box>
-      ß
     </main>
   );
 };
