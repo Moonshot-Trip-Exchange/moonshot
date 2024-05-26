@@ -6,6 +6,9 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
+import { ExploreIcon } from './ExploreIcon';
+import { SellTicketsIcon } from './SellTicketsIcon'
+import { ManageTicketsIcon } from './ManageTicketsIcon'
 
 export const MSAppBar = () => {
   let auth = true;
@@ -32,20 +35,20 @@ export const MSAppBar = () => {
           </Link>
         </div>
         {location.pathname === '/' ? (
-          <div>
-            <Link to="/sell-ticket" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography variant="h6" component="div" sx={{ color: 'black', fontSize: '1.2rem', paddingLeft: '30px', marginBottom: '-10px' }}>
-                Sell Tickets
-              </Typography>
-            </Link>
+          <div style={{ display: 'flex', flexDirection: 'row'}}>
+            <SellTicketsIcon />
+            <ManageTicketsIcon />
+          </div>
+          
+        ) : location.pathname === '/sell-ticket' ? (
+          <div style={{ display: 'flex', flexDirection: 'row'}}>
+            <ExploreIcon />
+            <ManageTicketsIcon /> 
           </div>
         ) : (
-          <div>
-            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography variant="h6" component="div" sx={{ color: 'black', fontSize: '1.2rem', paddingLeft: '30px', marginBottom: '-10px' }}>
-                Explore
-              </Typography>
-            </Link>
+          <div style={{ display: 'flex', flexDirection: 'row'}}>
+            <ExploreIcon />
+            <SellTicketsIcon />
           </div>
         )}
         <div style={{ flexGrow: 1 }} />

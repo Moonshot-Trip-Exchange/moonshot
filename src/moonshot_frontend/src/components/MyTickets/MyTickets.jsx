@@ -1,50 +1,47 @@
-import { Box } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { Table } from "antd";
 import React from "react";
 
-const dataSource = [
-  {
-    id: "X3423",
-    route: "Toronto to New York",
-    status: 'Pending',
-    price: "$200",
-    manage: <button>Manage</button>,
-  },
-  {
-    id: "X3423",
-    route: "Toronto to New York",
-    status: 'Pending',
-    price: "$200",
-    manage: <button>Manage</button>,
-  },
-  {
-    id: "X3423",
-    route: "Toronto to New York",
-    status: 'Pending',
-    price: "$200",
-    manage: <button>Manage</button>,
-  },
-  {
-    id: "X3423",
-    route: "Toronto to New York",
-    status: 'Pending',
-    price: "$200",
-    manage: <button>Manage</button>,
-  },
-  {
-    id: "X3423",
-    route: "Toronto to New York",
-    status: 'Pending',
-    price: "$200",
-    manage: <button>Manage</button>,
-  },
-];
+const manageButton = <Button variant="contained">Manage</Button>;
+
+const routes = ["Toronto to New York", "Los Angeles to Chicago", "Houston to Phoenix", "San Diego to Seattle"];
+const statuses = ['Pending', 'Confirmed', 'Cancelled'];
+
+const getRandomTicket = () => {
+  const randomRoute = routes[Math.floor(Math.random() * routes.length)];
+  const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+  const randomPrice = `$${Math.floor(Math.random() * 500) + 100}`;
+
+  return {
+    id: `X${Math.floor(Math.random() * 10000)}`,
+    date: getRandomDate(),
+    route: randomRoute,
+    status: randomStatus,
+    price: randomPrice,
+    manage: manageButton,
+  };
+}
+
+const getRandomDate = () => {
+  const today = new Date();
+  const randomDayOffset = Math.floor(Math.random() * 61); // random number between -30 and 30
+  const randomDate = new Date();
+  randomDate.setDate(today.getDate() + randomDayOffset);
+  return randomDate.toLocaleDateString();
+}
+
+const dataSource = Array.from({ length: 5 }, getRandomTicket);
 
 const columns = [
   {
     title: "Ticket ID ",
     dataIndex: "id",
     key: "id",
+  },
+  {
+    title: "Data",
+    dataIndex: "date",
+    key: "date",
   },
   {
     title: "Route",
@@ -71,7 +68,7 @@ const columns = [
 export const MyTickets = () => {
   return (
     <Box sx={{padding: '30px'}}>
-      <h1>My Tickets</h1>
+      <Typography sx={{ padding: "20px", fontSize: '1.6rem' }}>My Tickets</Typography>
       <Table dataSource={dataSource} columns={columns} />
     </Box>
   );
