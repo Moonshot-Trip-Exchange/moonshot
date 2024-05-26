@@ -8,12 +8,17 @@ import { SellTicket }  from './components/SellTicket/SellTicket';
 
 import { MyTickets } from './components/MyTickets/MyTickets';
 
+import { CheckoutSuccess } from './components/CheckoutStatus/CheckoutSuccess';
+import { CheckoutFailed } from './components/CheckoutStatus/CheckoutFailed';
+
 
 export const App = () => {
   return (
     <Router> 
       <MSAppBar />
       <Routes>
+        <Route path="/checkout-failed" element={<CheckoutFailed />} />
+        <Route path="/checkout-success" element={<CheckoutSuccess />} />
         <Route path="/sell-ticket" element={<SellTicket />} />
         <Route path="/my-tickets" element={<MyTickets />} />
         <Route path="/" element={<Marketplace />} />
