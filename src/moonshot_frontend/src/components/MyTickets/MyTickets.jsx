@@ -10,10 +10,12 @@ const statuses = ['Pending', 'Confirmed', 'Cancelled'];
 const getRandomTicket = () => {
   const randomRoute = routes[Math.floor(Math.random() * routes.length)];
   const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
-  const randomPrice = `$${Math.floor(Math.random() * 500) + 100}`;
+  const randomPrice = `$${Math.floor(Math.random() * 100) + 50}`;
+  const id = `X${Math.floor(Math.random() * 10000)}`;
 
   return {
-    id: `X${Math.floor(Math.random() * 10000)}`,
+    key: id,
+    id: id,
     date: getRandomDate(),
     route: randomRoute,
     status: randomStatus,
